@@ -1,36 +1,30 @@
+import './wc-shim'
+import { registerAsCustomElements } from '@angular/elements';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
+import { HelloWorldModule, HelloWorld } from './app/hello-world'
+
 import { Version } from '@microsoft/sp-core-library';
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
-import { escape } from '@microsoft/sp-lodash-subset';
 
-import styles from './NgHelloWorldWebPart.module.scss';
-import * as strings from 'NgHelloWorldWebPartStrings';
+const platform = platformBrowserDynamic();
 
-export interface INgHelloWorldWebPartProps {
-  description: string;
-}
+registerAsCustomElements([HelloWorld], () => platform.bootstrapModule(HelloWorldModule, { ngZone: 'noop' }));
 
-export default class NgHelloWorldWebPartWebPart extends BaseClientSideWebPart<INgHelloWorldWebPartProps> {
 
+
+
+export default class NgHelloWorldWebPartWebPart extends BaseClientSideWebPart<HelloWorld> {
+  element: HTMLElement;
   public render(): void {
-    this.domElement.innerHTML = `
-      <div class="${ styles.ngHelloWorld }">
-        <div class="${ styles.container }">
-          <div class="${ styles.row }">
-            <div class="${ styles.column }">
-              <span class="${ styles.title }">Welcome to SharePoint!</span>
-              <p class="${ styles.subTitle }">Customize SharePoint experiences using Web Parts.</p>
-              <p class="${ styles.description }">${escape(this.properties.description)}</p>
-              <a href="https://aka.ms/spfx" class="${ styles.button }">
-                <span class="${ styles.label }">Learn more</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>`;
+    if (!this.renderedOnce) {
+      const HelloWorld = customElements.get('hello-world');
+
+    }
+    this.domElement.innerHTML = `<hello-world name="${this.properties.name}"></hello-world>`;
   }
 
   protected get dataVersion(): Version {
@@ -42,14 +36,15 @@ export default class NgHelloWorldWebPartWebPart extends BaseClientSideWebPart<IN
       pages: [
         {
           header: {
-            description: strings.PropertyPaneDescription
+            description: 'Description'
           },
           groups: [
             {
-              groupName: strings.BasicGroupName,
+              groupName: "Options",
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
+                PropertyPaneTextField('name', {
+                  label: "Username",
+                  value: "Rob"
                 })
               ]
             }

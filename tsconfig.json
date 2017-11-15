@@ -1,16 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2015",
     "forceConsistentCasingInFileNames": true,
     "module": "commonjs",
     "jsx": "react",
     "declaration": true,
     "sourceMap": true,
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "types": [
-      "es6-promise",
-      "es6-collections",
       "webpack-env"
+    ],
+    "lib": [
+      "dom",
+      "es2015"
     ]
   }
 }
