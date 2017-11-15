@@ -5,7 +5,7 @@
     "ng-hello-world-web-part": {
       "components": [
         {
-          "entrypoint": "./lib/webparts/ngHelloWorld/NgHelloWorldWebPart.js",
+          "entrypoint": "./src/webparts/ngHelloWorld/NgHelloWorldWebPart.ts",
           "manifest": "./src/webparts/ngHelloWorld/NgHelloWorldWebPart.manifest.json"
         }
       ]

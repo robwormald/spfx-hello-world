@@ -2,8 +2,9 @@ import './wc-shim'
 import { registerAsCustomElements } from '@angular/elements';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
 import { HelloWorldModule, HelloWorld } from './app/hello-world'
-
+import { HelloWorldModuleNgFactory } from './app/hello-world.ngfactory'
 import { Version } from '@microsoft/sp-core-library';
+console.log(HelloWorldModuleNgFactory)
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,

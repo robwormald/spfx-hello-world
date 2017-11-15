@@ -7,7 +7,10 @@ import { BrowserModule } from '@angular/platform-browser'
     <div>
       Hello, my name is {{name}}
     </div>
-  `
+  `,
+  styleUrls: [
+   // './hello-world.scss'
+  ]
 })
 export class HelloWorld {
   @Input() name = 'Angular'
