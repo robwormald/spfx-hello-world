@@ -17,7 +17,6 @@ import {
 
 const platform = platformBrowser();
 
-
 registerAsCustomElements([HelloWorld], () => platformBrowser().bootstrapModuleFactory(NgElementDemosNgFactory, { ngZone: 'noop' }))
 
 export default class NgHelloWorldWebPartWebPart extends BaseClientSideWebPart<HelloWorld> {
@@ -26,11 +25,7 @@ export default class NgHelloWorldWebPartWebPart extends BaseClientSideWebPart<He
   }
   ngElement: HTMLElement;
   public render(): void {
-    if(!this.renderedOnce){
-      const HelloWorldElement = customElements.get('hello-world');
-      this.ngElement = new HelloWorldElement();
-      this.domElement.appendChild(this.ngElement);
-    }
+    this.domElement.innerHTML = '< insert element here >'
   }
 
   protected get dataVersion(): Version {
