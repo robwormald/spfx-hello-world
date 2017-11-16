@@ -6,13 +6,22 @@
       "components": [
         {
           "entrypoint": "./src/webparts/ngHelloWorld/NgHelloWorldWebPart.ts",
-          "manifest": "./src/webparts/ngHelloWorld/NgHelloWorldWebPart.manifest.json"
+          "manifest": "./src/webparts/ngHelloWorld/NgHelloWorldWebPart.manifest.json",
+          "entryModule": "./src/webparts/ngHelloWorld/elements/hello-world",
+          "entryModuleName": "HelloWorldModule"
+        }
+      ]
+    },
+    "graph-demo-web-part": {
+      "components": [
+        {
+          "entrypoint": "./src/webparts/graphDemo/GraphDemoWebPart.ts",
+          "manifest": "./src/webparts/graphDemo/GraphDemoWebPart.manifest.json",
+          "entryModule": "./src/webparts/graphDemo/elements/hello-world",
+          "entryModuleName": "HelloWorldModule"
         }
       ]
     }
   },
-  "externals": {},
-  "localizedResources": {
-    "NgHelloWorldWebPartStrings": "lib/webparts/ngHelloWorld/loc/{locale}.js"
-  }
+  "externals": {}
 }

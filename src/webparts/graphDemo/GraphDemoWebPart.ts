@@ -1,21 +1,19 @@
 import './elements'
-import { HelloWorld } from './elements/hello-world'
-
 import { Version } from '@microsoft/sp-core-library';
-
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
 
-export default class NgHelloWorldWebPartWebPart extends BaseClientSideWebPart<HelloWorld> {
-  constructor(){
-    super();
-  }
-  ngElement: HTMLElement;
+export interface IGraphDemoWebPartProps {
+  description: string;
+}
+
+export default class GraphDemoWebPartWebPart extends BaseClientSideWebPart<IGraphDemoWebPartProps> {
+
   public render(): void {
-    this.domElement.innerHTML = `<insert element here>`
+    this.domElement.innerHTML = `<ms-graph-demo></ms-graph-demo>`;
   }
 
   protected get dataVersion(): Version {
@@ -27,15 +25,14 @@ export default class NgHelloWorldWebPartWebPart extends BaseClientSideWebPart<He
       pages: [
         {
           header: {
-            description: 'Description'
+            description: 'Graph Demo'
           },
           groups: [
             {
-              groupName: "Options",
+              groupName: 'Options',
               groupFields: [
-                PropertyPaneTextField('name', {
-                  label: "Username",
-                  value: "Rob"
+                PropertyPaneTextField('description', {
+                  label: 'Description'
                 })
               ]
             }

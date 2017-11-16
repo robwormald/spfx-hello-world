@@ -14,3 +14,12 @@ import { CommonModule } from '@angular/common';
 export class HelloWorld {
   @Input() name = 'Angular'
 }
+
+@NgModule({
+  imports: [BrowserModule],
+  declarations: [HelloWorld],
+  entryComponents: [HelloWorld]
+})
+export class HelloWorldModule {
+  ngDoBootstrap(){}
+}
