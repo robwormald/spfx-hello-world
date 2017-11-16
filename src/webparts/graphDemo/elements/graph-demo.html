@@ -3,6 +3,9 @@
     <div class="row">
       <div class="column">
         <span class="title">I AM THE ONE WHO GRAPHS</span>
+        <ul>
+          <li *ngFor="let group of groups | async">{{group.displayName}}</li>
+        </ul>
       </div>
     </div>
   </div>

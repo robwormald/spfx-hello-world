@@ -6,7 +6,8 @@ import { platformBrowser } from '@angular/platform-browser'
 import { GraphDemo, GraphDemoModule } from './graph-demo'
 import { GraphDemoModuleNgFactory } from './graph-demo.ngfactory'
 
-registerAsCustomElements([
-  GraphDemo
-], () => platformBrowser().bootstrapModuleFactory(GraphDemoModuleNgFactory, {ngZone: 'noop'}))
-  .catch(err => console.log(err));
+registerAsCustomElements(
+  [ GraphDemo ],
+  () => platformBrowser().bootstrapModuleFactory(GraphDemoModuleNgFactory)
+)
+.catch(err => console.log(err));
