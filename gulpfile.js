@@ -6,6 +6,7 @@ const build = require('@microsoft/sp-build-web');
 const merge = require('webpack-merge');
 const {AngularCompilerPlugin} = require('@ngtools/webpack');
 
+//TODO: factor this out into an npm package
 build.configureWebpack.mergeConfig({
   additionalConfiguration: (generatedConfiguration) => {
     Object.assign(generatedConfiguration.resolve, {extensions: ['.ts', '.js']});
@@ -20,7 +21,7 @@ build.configureWebpack.mergeConfig({
     ]
     generatedConfiguration.plugins.push(new AngularCompilerPlugin({
       tsConfigPath: path.resolve('./tsconfig.json'),
-      entryModule: path.resolve('src/webparts/ngHelloWorld/app/hello-world') + '#HelloWorldModule'
+      entryModule: path.resolve('src/webparts/ngHelloWorld/elements/elements') + '#NgElementDemos'
     }))
     return generatedConfiguration;
   }

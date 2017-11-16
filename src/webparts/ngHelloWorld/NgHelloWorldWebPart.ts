@@ -1,31 +1,36 @@
+//web components ES5 shim
 import './wc-shim'
 import { registerAsCustomElements } from '@angular/elements';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
-import { HelloWorldModule, HelloWorld } from './app/hello-world'
-import { HelloWorldModuleNgFactory } from './app/hello-world.ngfactory'
+import { platformBrowser } from '@angular/platform-browser'
+
+import { HelloWorld } from './elements/hello-world/hello-world'
+import { NgElementDemos } from './elements/elements'
+import { NgElementDemosNgFactory } from './elements/elements.ngfactory'
+
 import { Version } from '@microsoft/sp-core-library';
-console.log(HelloWorldModuleNgFactory)
+
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
 
-const platform = platformBrowserDynamic();
-
-registerAsCustomElements([HelloWorld], () => platform.bootstrapModule(HelloWorldModule, { ngZone: 'noop' }));
+const platform = platformBrowser();
 
 
-
+registerAsCustomElements([HelloWorld], () => platformBrowser().bootstrapModuleFactory(NgElementDemosNgFactory, { ngZone: 'noop' }))
 
 export default class NgHelloWorldWebPartWebPart extends BaseClientSideWebPart<HelloWorld> {
-  element: HTMLElement;
+  constructor(){
+    super();
+  }
+  ngElement: HTMLElement;
   public render(): void {
-    if (!this.renderedOnce) {
-      const HelloWorld = customElements.get('hello-world');
-
+    if(!this.renderedOnce){
+      const HelloWorldElement = customElements.get('hello-world');
+      this.ngElement = new HelloWorldElement();
+      this.domElement.appendChild(this.ngElement);
     }
-    this.domElement.innerHTML = `<hello-world name="${this.properties.name}"></hello-world>`;
   }
 
   protected get dataVersion(): Version {
