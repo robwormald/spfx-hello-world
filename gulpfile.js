@@ -16,7 +16,10 @@ build.configureWebpack.mergeConfig({
         test: /\.scss$/,
         use: ['raw-loader', 'sass-loader']
       },
-      { test: /\.css$/, loader: 'raw-loader' },
+      {
+        test: /\.css$/,
+        loader: ['raw-loader', 'css-loader']
+      },
       { test: /\.html$/, loader: 'raw-loader' }
     ]
     generatedConfiguration.plugins.push(new AngularCompilerPlugin({
@@ -28,6 +31,6 @@ build.configureWebpack.mergeConfig({
 });
 
 build.typescript.enabled = false;
-build.typescript.enabled = false;
+build.tslint.enabled = false;
 
 build.initialize(gulp);

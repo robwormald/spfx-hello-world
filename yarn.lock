@@ -1025,7 +1025,7 @@ ajv@^4.9.1:
     co "^4.6.0"
     json-stable-stringify "^1.0.1"
 
-ajv@^5.1.0, ajv@^5.1.5:
+ajv@^5.0.0, ajv@^5.1.0, ajv@^5.1.5:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.3.0.tgz#4414ff74a50879c208ee5fdc826e32c303549eda"
   dependencies:
@@ -1058,6 +1058,10 @@ alphanum-sort@^1.0.1, alphanum-sort@^1.0.2:
 amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
+
+angular@1.6.4:
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.4.tgz#03b7b15c01a0802d7e2cf593240e604054dc77fb"
 
 ansi-align@^1.1.0:
   version "1.1.0"
@@ -2968,6 +2972,13 @@ expand-tilde@^2.0.2:
   resolved "https://registry.yarnpkg.com/expand-tilde/-/expand-tilde-2.0.2.tgz#97e801aa052df02454de46b02bf621642cdc8502"
   dependencies:
     homedir-polyfill "^1.0.1"
+
+exports-loader@^0.6.4:
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/exports-loader/-/exports-loader-0.6.4.tgz#d70fc6121975b35fc12830cf52754be2740fc886"
+  dependencies:
+    loader-utils "^1.0.2"
+    source-map "0.5.x"
 
 express-session@~1.11.3:
   version "1.11.3"
@@ -5636,6 +5647,13 @@ netmask@~1.0.4:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/netmask/-/netmask-1.0.6.tgz#20297e89d86f6f6400f250d9f4f6b4c1945fcd35"
 
+ng-office-ui-fabric@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/ng-office-ui-fabric/-/ng-office-ui-fabric-0.16.0.tgz#4e44f1b5626ce3ef3777ec7931ca2b50a6631cf6"
+  dependencies:
+    angular "1.6.4"
+    office-ui-fabric "2.6.3"
+
 no-case@^2.2.0:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/no-case/-/no-case-2.3.2.tgz#60b813396be39b3f1288a4c1ed5d1e7d28b464ac"
@@ -5943,6 +5961,10 @@ office-ui-fabric-react@4.40.2-hotfix.1:
 office-ui-fabric@2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/office-ui-fabric/-/office-ui-fabric-2.6.1.tgz#e2ac9ff3e4fc788da661178debf094036b0a2e26"
+
+office-ui-fabric@2.6.3:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/office-ui-fabric/-/office-ui-fabric-2.6.3.tgz#2c81a4f38857174303c4398a0a0ee3c17fb2fad2"
 
 on-finished@~2.3.0:
   version "2.3.0"
@@ -7305,6 +7327,12 @@ sax@~1.2.1:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
+schema-utils@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.3.0.tgz#f5877222ce3e931edae039f17eb3716e7137f8cf"
+  dependencies:
+    ajv "^5.0.0"
+
 scrollreveal@3.3.6:
   version "3.3.6"
   resolved "https://registry.yarnpkg.com/scrollreveal/-/scrollreveal-3.3.6.tgz#659b7bf0ba0e244dced978ac5540c00b43773e4a"
@@ -7875,6 +7903,13 @@ strip-indent@^1.0.1:
 strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
+
+style-loader@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.19.0.tgz#7258e788f0fee6a42d710eaf7d6c2412a4c50759"
+  dependencies:
+    loader-utils "^1.0.2"
+    schema-utils "^0.3.0"
 
 sudo@~1.0.3:
   version "1.0.3"

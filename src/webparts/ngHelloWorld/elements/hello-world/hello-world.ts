@@ -5,13 +5,11 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'hello-world',
   templateUrl: `./hello-world.html`,
-  styleUrls: [
-   './hello-world.scss'
-  ],
+  styleUrls: [ './hello-world.scss' ],
   host: {
     class: 'hello-world'
   },
-  encapsulation: ViewEncapsulation.Native
+  encapsulation: ViewEncapsulation.None
 })
 export class HelloWorld {
   @Input() name = 'Angular'
