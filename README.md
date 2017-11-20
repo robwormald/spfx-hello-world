@@ -1,3 +1,5 @@
+# NOTICE: Moved to https://github.com/SharePoint/sp-dev-fx-angular
+
 ## spfx-hello-world
 
 This is where you include your WebPart documentation.
